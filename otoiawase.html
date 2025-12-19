@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品一覧 - AniListo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="icon" href="favicon.png">
+    <style>
+        .filter-card {
+            position: sticky;
+            top: 20px;
+        }
+
+        .anime-card img {
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .filter-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-film"></i> AniListo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">作品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-ranking.html">ランキング</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-mylist.html">マイリスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-community.html">コミュニティ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="setting.html">設定</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
+                    </li>
+                </ul>
+                <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+                    <i class="bi bi-person-circle"></i> ログイン</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="my-4 mx-auto" style="max-width: 700px;">お問い合わせ</h1>
+        <form action="#" class="my-4 mx-auto" style="max-width: 700px;">
+            <div class="mb-4 row">
+                <label for="Q_Name" class="col-form-label col-md-3">姓</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control id=Q_Name" name="Q_Name" placeholder="山田">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <label for="Q_Name" class="col-form-label col-md-3">姓(フリガナ)</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control id=Q_Name" name="Q_Name" placeholder="ヤマダ">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <label for="Q_Name" class="col-form-label col-md-3">名</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control id=Q_Name" name="Q_Name" placeholder="太郎">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <label for="Q_Name" class="col-form-label col-md-3">名(フリガナ)</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control id=Q_Name" name="Q_Name" placeholder="タロウ">
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <label for="Q_Email" class="form-label col-md-3">メールアドレス</label>
+                <div class="col-md-6">
+                    <input type="email" name="Q_Email" class="col-form-control" id="Q_Email"
+                        placeholder="example@example.com">
+                    <div class="from-text">※半角文字で入力してください。</div>
+                </div>
+            </div>
+            <div class="mb-4 row">
+                <label for="Q_Ask" class="col-form-label col-md-3">お問い合わせ内容</label>
+                <div class="col-md-9">
+                    <textarea name="Q_Ask" id="Q_Ask" class="form-control" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-end">
+                    <button type="submita" class="btn btn-primary">送信</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- フッター -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-film"></i> AniListo</h5>
+                    <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サイト情報</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サポート</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">フォローする</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center text-light mb-0">&copy; 2025 AniListo. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="sort-toggle.js"></script>
+</body>
+
+</html>

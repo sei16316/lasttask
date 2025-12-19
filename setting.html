@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品一覧 - AniListo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="icon" href="favicon.png">
+    <style>
+        .filter-card {
+            position: sticky;
+            top: 20px;
+        }
+
+        .anime-card img {
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .filter-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-film"></i> AniListo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">作品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-ranking.html">ランキング</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-mylist.html">マイリスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-community.html">コミュニティ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="setting.html">設定</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
+                    </li>
+                </ul>
+                <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+                    <i class="bi bi-person-circle"></i> ログイン</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <section class="mb-5">
+            <h2 class="fw-bold mb-4" style="margin-top: 15px;"><i class="bi bi-gear"></i>設定</h2>
+
+            <div class="accordion" id="characterAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mainsetting">
+                            アカウント管理
+                        </button>
+                    </h2>
+                    <div id="mainsetting" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">アカウント情報</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">個人情報変更</button><br>
+                            <button
+                                style="color: red;max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">アカウント削除</button><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#subsetting1">
+                            テーマ
+                        </button>
+                    </h2>
+                    <div id="subsetting1" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white; color: red;">レッド</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white; color: blue;">ブルー</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white; color: purple;">パープル</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white; color: green;">グリーン</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white; color: yellow;">イエロー</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white; color: black;">ブラック</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: black; color: white;">ホワイト</button><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#subsetting2">
+                            画質設定
+                        </button>
+                    </h2>
+                    <div id="subsetting2" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">2160p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">1440p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">1080p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">720p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">480p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">360p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">240p</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; border-radius: 5px; padding-left: 10px; margin-bottom: 10px; background-color: white;">144p</button><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#subsetting3">
+                            言語設定
+                        </button>
+                    </h2>
+                    <div id="subsetting3" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">日本語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">英語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">中国語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">スペイン語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">アラビア語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">フランス語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ヒンディー語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">インドネシア語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ポルトガル語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ベンガル語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ロシア語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ドイツ語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">パンジャーブ語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ジャワ語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">韓国語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">タミル語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ベトナム語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">テルグ語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">マラーティー語</button><br>
+                            <button
+                                style="max-width: 100%; border: solid; padding-left: 10px; margin-bottom: 10px; background-color: white;">ウルドゥー語</button><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#subsetting4">
+                            通知設定
+                        </button>
+                    </h2>
+                    <div id="subsetting4" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <form action="#" method="get" enctype="multipart/form-data">
+                                <label><input type="checkbox" name="message" value="mail" style="margin-bottom: 10px; margin-right: 10px;">関連メール通知</label><br>
+                                <label><input type="checkbox" name="message" value="new" style="margin-bottom: 10px; margin-right: 10px;">新作アニメ</label><br>
+                                <label><input type="checkbox" name="message" value="suggest" style="margin-bottom: 10px; margin-right: 10px;">おすすめの作品</label><br>
+                                <label><input type="checkbox" name="message" value="latest" style="margin-bottom: 10px; margin-right: 10px;">視聴中の作品の更新</label><br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-film"></i> AniListo</h5>
+                    <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サイト情報</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サポート</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+                        <li><a href="otoiawase.html" class="text-light text-decoration-none">お問い合わせ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">フォローする</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center text-light mb-0">&copy; 2025 AniListo. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="sort-toggle.js"></script>
+</body>
+
+</html>
